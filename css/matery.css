@@ -189,7 +189,7 @@ mark {
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background: linear-gradient(to right, rgba(241, 196, 15, 0.8) 0%, rgba(236, 0, 113, 0.6) 100%);
     opacity: 0.8;
 }
 
@@ -497,6 +497,9 @@ header .go-back i {
 
 .recommend .card .card-content {
     padding: 20px 40px;
+    border-radius: 10px;
+    background: url("../medias/banner/2.jpg") no-repeat;
+    background-size: 100% 100%;
 }
 
 @media only screen and (min-width: 1418px) {
