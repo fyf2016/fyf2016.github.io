@@ -517,6 +517,8 @@ header .go-back i {
 @media only screen and (max-width: 601px) {
     .recommend .card .card-content {
         padding: 10px 10px;
+        background: url("../medias/banner/2.jpg") no-repeat;
+        background-size: 100% 100%;
     }
 }
 
@@ -524,6 +526,8 @@ header .go-back i {
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .recommend .card .card-content {
         padding: 20px 20px;
+        background: url("../medias/banner/2.jpg") no-repeat;
+        background-size: 100% 100%;
     }
 }
 
