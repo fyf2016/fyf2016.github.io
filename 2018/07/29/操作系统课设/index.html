@@ -5,13 +5,15 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Node.js中的MD5加密, 流月如风">
-    <meta name="description" content="音乐先来一首陈势安的 《 天后 》来缓解一下疲惫的心情吧
-        
-
-
-
-MD5简介    1.定义        MD5即Message-Digest Algorithm 5（中文名为消息摘要算法第五版）为计算机安全领域广泛使用 ">
+    <meta name="keywords" content="操作系统课设(多道程序缓冲区协调操作), 流月如风">
+    <meta name="description" content="项目开发大致流程 ( 多道程序缓冲区协调操作 )1.&amp;emsp;项目概述
+2.&amp;emsp;项目要求
+3.&amp;emsp;总体设计
+4.&amp;emsp;结果演示
+5.&amp;emsp;项目配置
+6.&amp;emsp;项目源代码
+1.&amp;emsp;项目概述
+文字描述">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@ MD5简介    1.定义        MD5即Message-Digest Algorithm 5（中文名为消�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Node.js中的MD5加密 | 流月如风</title>
+    <title>操作系统课设(多道程序缓冲区协调操作) | 流月如风</title>
     <link rel="icon" type="image/png" href="/icon/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -274,13 +276,13 @@ MD5简介    1.定义        MD5即Message-Digest Algorithm 5（中文名为消�
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/images/cover/cover3.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/images/cover/cover7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Node.js中的MD5加密
+                        操作系统课设(多道程序缓冲区协调操作)
                     </div>
                 </div>
             </div>
@@ -391,12 +393,16 @@ MD5简介    1.定义        MD5即Message-Digest Algorithm 5（中文名为消�
             
             <div class="article-tag">
                 
-                <a href="/tags/技术/" target="_blank">
-                    <span class="chip bg-color">技术</span>
+                <a href="/tags/课程设计/" target="_blank">
+                    <span class="chip bg-color">课程设计</span>
                 </a>
                 
-                <a href="/tags/Node-js/" target="_blank">
-                    <span class="chip bg-color">Node.js</span>
+                <a href="/tags/javaWeb/" target="_blank">
+                    <span class="chip bg-color">javaWeb</span>
+                </a>
+                
+                <a href="/tags/操作系统/" target="_blank">
+                    <span class="chip bg-color">操作系统</span>
                 </a>
                 
             </div>
@@ -407,15 +413,15 @@ MD5简介    1.定义        MD5即Message-Digest Algorithm 5（中文名为消�
                 <!--<span class="post-cate" style="margin-right: 0px">-->
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/技术/" class="post-category" target="_blank">
-                        技术
+                    <a href="/categories/课程设计/" class="post-category" target="_blank">
+                        课程设计
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-03-22
+                    <i class="fa fa-clock-o fa-fw"></i>2018-07-29
                 </span>
 				
 				
@@ -427,103 +433,229 @@ MD5简介    1.定义        MD5即Message-Digest Algorithm 5（中文名为消�
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h2><p>先来一首陈势安的 《 天后 》来缓解一下疲惫的心情吧</p>
-<div><br>    <video src="/music/天后-陈势安.mp3" controls="controls" style="background: url('/images/music/music1.jpg');background-size:100% 100%;"><br>    </video><br></div>
-
-
-
-<h2 id="MD5简介"><a href="#MD5简介" class="headerlink" title="MD5简介"></a>MD5简介</h2><p><br>    <span style="font-size: 17px;color: purple">1.定义</span><br><br>        MD5即Message-Digest Algorithm 5（中文名为消息摘要算法第五版）为计算机安全领域广泛使用<br><br>        的一种散列函数，用以提供消息的完整性保护。<br></p>
-
-<p><br>    <span style="font-size: 17px;color: #00e079">2.作用</span><br><br>    MD5的作用是让大容量信息在用数字签名软件签署私人密钥前被”压缩”成一种保密的格式（就是把一<br><br>个任意长度的字节串变换成一定长的十六进制数字串）。除了MD5以外，其中比较有名的还有<br><br>    <span style="color: skyblue;">sha-1</span>、<span style="color: orange;">RIPEMD</span>以及<span style="color: green;">Haval</span>等。<br></p>
-
-<p><br>    <span style="font-size: 17px;color: #a78e44">3.MD5算法特点</span><br><br>        MD5算法具有以下特点：<br><br>    (1) 压缩性：任意长度的数据，算出的MD5值长度都是固定的。<br><br>    (2) 容易计算：从原数据计算出MD5值很容易。<br><br>    (3) 抗修改性：对原数据进行任何改动，哪怕只修改1个字节，所得到的MD5值都有很大区别。<br><br>    (4) 强抗碰撞：已知原数据和其MD5值，想找到一个具有相同MD5值的数据（即伪造数据）是非常困<br><br>&emsp;&nbsp;难的。<br></p>
-
-<p><br></p>
-<h2 id="Node-js使用MD5"><a href="#Node-js使用MD5" class="headerlink" title="Node.js使用MD5"></a>Node.js使用MD5</h2><pre class=" language-javascript"><code class="language-javascript">注<span class="token punctuation">:</span> MD5是一种常用的哈希算法，用于给任意数据一个“签名”。这个签名通常用一个十六进制的字符串表示：
-
-        <span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//引入crypto加密模块</span>
-
-        <span class="token keyword">const</span> hash <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createHash</span><span class="token punctuation">(</span><span class="token string">'md5'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//规定使用哈希算法中的MD5算法</span>
-
-        <span class="token comment" spellcheck="true">// 可任意多次调用update(),效果相当于多个字符串相加</span>
-        hash<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token string">'123a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        hash<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token string">'456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//最终加密的字符串为'123a456',hash.digest('hex')表示输出的格式为16进制</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hash<span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 57d15a6ee827933b25dab42111b6803b</span>
-
-        <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>方法默认字符串编码为UTF<span class="token number">-8</span>，也可以传入Buffer。
-
-        注<span class="token punctuation">:</span>
-
-        如果要计算SHA1，只需要把<span class="token string">'md5'</span>改成<span class="token string">'sha1'</span>，就可以得到SHA1的结果
-
-        3be8b1b4c1b081f65522c4dd69b1d5c5713b038b。当然还可以使用更安全的sha256和sha512。
-</code></pre>
-<p>同样,可以将MD5算法封装成一个函数 , 方便重复调用</p>
-
-<pre class=" language-javascript"><code class="language-javascript">        <span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">function</span> md5 <span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> crypto<span class="token punctuation">.</span><span class="token function">createHash</span><span class="token punctuation">(</span><span class="token string">'md5'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-<p>目前单次的MD5加密并不安全,很容易被暴力破解,因此推荐多次加密和使用秘钥加密</p>
-
-<pre class=" language-javascript"><code class="language-javascript">    <span class="token number">1</span><span class="token punctuation">.</span>多次MD5加密
-
-        例如要加密 <span class="token string">'123'</span> 这个字符串
-
-           <span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">function</span> md5 <span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> crypto<span class="token punctuation">.</span><span class="token function">createHash</span><span class="token punctuation">(</span><span class="token string">'md5'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-        多次加密<span class="token punctuation">:</span>
-
-        <span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">'123'</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">var</span> pass<span class="token operator">=</span><span class="token function">md5</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">var</span> FinalPass<span class="token operator">=</span><span class="token function">md5</span><span class="token punctuation">(</span>pass<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<pre><code>多次MD5加密不容易被破解,但是嵌套起来也比较麻烦, 因此我再介绍另外一种方法
-</code></pre><pre class=" language-javascript"><code class="language-javascript">    <span class="token number">2</span><span class="token punctuation">.</span>MD5结合秘钥加密
-
-        例如要加密 <span class="token string">'123'</span> 这个字符串
-
-           <span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">function</span> md5 <span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> crypto<span class="token punctuation">.</span><span class="token function">createHash</span><span class="token punctuation">(</span><span class="token string">'md5'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-        结合秘钥加密<span class="token punctuation">:</span>
-
-        <span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">'123'</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">var</span> md5_suffix<span class="token operator">=</span><span class="token string">'asd1wdad1d哈do捱三顶五#&amp;8qw'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//md5_suffix作为秘钥,越复杂越好</span>
-
-        <span class="token keyword">var</span> FinalPass<span class="token operator">=</span><span class="token function">md5</span><span class="token punctuation">(</span>str<span class="token operator">+</span>md5_suffix<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<pre><code>结合秘钥使用MD5加密更难被破解,但是也有一定的缺陷,就是如果秘钥一旦丢失就无法进行验证
-</code></pre><h2 id="MD5加密语句的详细讲解"><a href="#MD5加密语句的详细讲解" class="headerlink" title="MD5加密语句的详细讲解"></a>MD5加密语句的详细讲解</h2><pre class=" language-javascript"><code class="language-javascript">    <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> crypto<span class="token punctuation">.</span><span class="token function">createHash</span><span class="token punctuation">(</span>algorithm<span class="token punctuation">)</span>
-
-        创建并返回一个hash对象，它是一个指定算法的加密hash，用于生成hash摘要。
-
-        参数algorithm可选择系统上安装的OpenSSL版本所支持的算法。例如：<span class="token string">'sha1'</span><span class="token punctuation">,</span> <span class="token string">'md5'</span><span class="token punctuation">,</span> <span class="token string">'sha256'</span><span class="token punctuation">,</span> 
-
-        <span class="token string">'sha512'</span>等。在近期发行的版本中，openssl list<span class="token operator">-</span>message<span class="token operator">-</span>digest<span class="token operator">-</span>algorithms会显示这些可用的摘要算法
-
-    <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> hash<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-
-        更新hash的内容为指定的data。当使用流数据时可能会多次调用该方法。
-
-    <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> hash<span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span>encoding<span class="token operator">=</span><span class="token string">'binary'</span><span class="token punctuation">)</span>
-
-        计算所有传入数据的hash摘要。参数encoding（编码方式）可以为<span class="token string">'hex'</span><span class="token punctuation">,</span> <span class="token string">'binary'</span> 或者<span class="token string">'base64'</span>。    
-</code></pre>
+                <h2 id="项目开发大致流程-多道程序缓冲区协调操作"><a href="#项目开发大致流程-多道程序缓冲区协调操作" class="headerlink" title="项目开发大致流程 ( 多道程序缓冲区协调操作 )"></a><span style="color:rgba(255,165,0,0.8);text-shadow:5px 5px 5px #ccc">项目开发大致流程 ( 多道程序缓冲区协调操作 )</span></h2><p><span style="color:purple;text-shadow:5px 5px 5px #ccc ">1.&emsp;项目概述</span></p>
+<p><span style="color:orange;text-shadow:5px 5px 5px #ccc ">2.&emsp;项目要求</span></p>
+<p><span style="color:green;text-shadow:5px 5px 5px #ccc ">3.&emsp;总体设计</span></p>
+<p><span style="color:red;text-shadow:5px 5px 5px #ccc ">4.&emsp;结果演示</span></p>
+<p><span style="color:#459df5;text-shadow:5px 5px 5px #ccc ">5.&emsp;项目配置</span></p>
+<p><span style="color:black;text-shadow:5px 5px 5px #ccc ">6.&emsp;项目源代码</span></p>
+<h2 id="1-emsp-项目概述"><a href="#1-emsp-项目概述" class="headerlink" title="1.&emsp;项目概述"></a><span style="color:purple;text-shadow:5px 5px 5px #ccc ">1.&emsp;项目概述</span></h2><blockquote>
+<p>文字描述</p>
+</blockquote>
+<ul>
+<li><p>有多个 PUT 操作要不断循环地向 Buffer1 送字符数据，有 Move1 操作不断地将 Buffer1 的数据取到 Buffer2 。</p>
+</li>
+<li><p>Move2 操作不断地将Buffer1的数据取到 Buffer3 ，有多个 GET 操作要不断地从 Buffer2 和 Buffer3 中取数据。</p>
+</li>
+<li>PUT、 MOVE、 GET每次操作一个数据，为了在操作的过程中要保证数据不丢失, 每个 Buffer 每次只能接受一个 PUT 或一个 Move 或一个 Get 。</li>
+<li>运用进程同步和互斥机制设计一个多道程序完成上述操作。</li>
+</ul>
+<blockquote>
+<p>操作图示</p>
+</blockquote>
+<p><img src="/images/project/OsProject/1.png" alt="" style=" "></p>
+<h2 id="2-emsp-项目要求"><a href="#2-emsp-项目要求" class="headerlink" title="2.&emsp;项目要求"></a><span style="color:orange;text-shadow:5px 5px 5px #ccc ">2.&emsp;项目要求</span></h2><ol>
+<li>可以随机产生字符数据，由put操作将数据放入Buff，buffer中容量单位是字符；</li>
+<li>提供良好图形界面，显示Buffer的操作过程，可以暂停和继续系统的执行；</li>
+<li>可以设定各Buffer的容量、PUT、GET、Move操作的个数；</li>
+<li>可以设定PUT、GET、Move操作的速度；</li>
+<li>实时显示每个Buffer中已放入的数据和数据个数，当前Buffer中数据的个数和数据的内容，空闲Buffer的空间的个数；</li>
+<li>实时显示线程、进程所处于等待（阻塞）状态的个数；</li>
+<li>程序运行结束，显示汇总数据：</li>
+<li>总的运行时间；Buffer中数据的个数；已放入BUFFER的数据个数；</li>
+<li>已取出的数据个数；平均每个buffer中的数据个数。</li>
+<li>能够将每次的实验输入和实验结果存储起来，下次运行时或以后可查询。 </li>
+<li>可以根据题目的基本要求进行丰富的创意和想象。</li>
+</ol>
+<h2 id="3-emsp-总体设计"><a href="#3-emsp-总体设计" class="headerlink" title="3.&emsp;总体设计"></a><span style="color:green;text-shadow:5px 5px 5px #ccc ">3.&emsp;总体设计</span></h2><h3 id="3-1-课题分析"><a href="#3-1-课题分析" class="headerlink" title="3.1 课题分析"></a>3.1 课题分析</h3><blockquote>
+<p>课题实质探究</p>
+</blockquote>
+<ul>
+<li>由项目的描述可知该课题为 “多生产者 – 多消费者” 问题, 因此可以分析出其同步和互斥关系。    <ul>
+<li>同步关系:<br>多个生产者和多个消费者之间要按一定顺序访问缓冲区, 共同协作来保障进程顺利执行。</li>
+<li>互斥关系:<br>对缓冲区(临界资源)的访问是互斥的,缓冲区域每次只能接受一个PUT或一个Move或一个Get(互斥访问)。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-解读课题"><a href="#3-2-解读课题" class="headerlink" title="3.2 解读课题"></a>3.2 解读课题</h3><blockquote>
+<p>以书本所学信号量方式为例 , 来实现同步和互斥</p>
+</blockquote>
+<h4 id="3-2-1-信号量的设计"><a href="#3-2-1-信号量的设计" class="headerlink" title="3.2.1 信号量的设计"></a>3.2.1 信号量的设计</h4><ul>
+<li>信号量<ul>
+<li>empty1: 缓冲区Buffer1的空位数</li>
+<li>empty2: 缓冲区Buffer2的空位数</li>
+<li>empty3: 缓冲区Buffer3的空位数</li>
+<li>full1: 缓冲区1内的数据个数</li>
+<li>full2: 缓冲区2内的数据个数</li>
+<li>full2: 缓冲区3内的数据个数</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-2-以信号量来实现同步和互斥"><a href="#3-2-2-以信号量来实现同步和互斥" class="headerlink" title="3.2.2 以信号量来实现同步和互斥"></a>3.2.2 以信号量来实现同步和互斥</h4><p><img src="/images/project/OsProject/2.png" alt="" style=" "></p>
+<hr>
+<h3 id="3-3-主要功能设计"><a href="#3-3-主要功能设计" class="headerlink" title="3.3 主要功能设计"></a>3.3 主要功能设计</h3><h4 id="3-3-1-产生随机字符数据"><a href="#3-3-1-产生随机字符数据" class="headerlink" title="3.3.1  产生随机字符数据"></a>3.3.1  产生随机字符数据</h4><ul>
+<li>要求:  <ul>
+<li>产生的数据是字符类型,且是随机产生的</li>
+</ul>
+</li>
+<li>实现:  <ul>
+<li style="list-style: none"><input type="checkbox" checked> Step1:<br>  定义一个String字符串,包含1-9所有数字和a-z的小写字符以及A-Z的大写字符</li>
+<li style="list-style: none"><input type="checkbox" checked> Step2:<br>  创建Random类,产生一个从0到上述String字符串长度-1的随机整型量,<br>  调用String类的charAt(int i)方法获取字符</li>
+<li style="list-style: none"><input type="checkbox" checked> Step3:<br>  封装成静态类的方法(RandomChar),返回值为获取的字符, 方便调用</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-2-实时显示操作内容-暂停和继续"><a href="#3-3-2-实时显示操作内容-暂停和继续" class="headerlink" title="3.3.2 实时显示操作内容,暂停和继续"></a>3.3.2 实时显示操作内容,暂停和继续</h4><ul>
+<li>要求: <ul>
+<li>图形界面，显示Buffer的操作过程，可以暂停和继续系统的执行</li>
+</ul>
+</li>
+<li>实现: <ul>
+<li>界面部分: html+css+js+jquery+ajax (后面会详细介绍)</li>
+<li>显示Buffer操作过程: <ul>
+<li style="list-style: none"><input type="checkbox" checked> Step1:<br>  页面部分创建三个文本域, 分别对应Buffer1,Buffer2,Buffer3的操作内容</li>
+<li style="list-style: none"><input type="checkbox" checked> Step2:<br>  每次对Buffer操作的内容(放入或拿出字符)存放到数据库表中</li>
+<li style="list-style: none"><input type="checkbox" checked> Step3:<br>  页面使用ajax,访问后台,后台查询数据库,将查到的数据转<br>   为json格式返回给前台, 前台将获取的数据送入对应的文本域</li>
+<li style="list-style: none"><input type="checkbox" checked> 暂停的实现:<br>  分别在put线程,move线程,get线程的run方法末尾中加入While(boolean pause)循环,pause为true则一直睡眠,pause为false 则跳出循环, 用暂停对应的按钮来控制pause</li>
+<li style="list-style: none"><input type="checkbox" checked> 继续的实现: 将pause的值改为false, 则可以跳出循环</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-3-设定操作个数-容量-速度"><a href="#3-3-3-设定操作个数-容量-速度" class="headerlink" title="3.3.3 设定操作个数 容量 速度"></a>3.3.3 设定操作个数 容量 速度</h4><ul>
+<li>要求: <ul>
+<li>可以设定各Buffer的容量、PUT、GET、Move操作的个数</li>
+</ul>
+</li>
+<li>实现: <ul>
+<li>界面部分相关实现: 创建多个input输入框用来存放要设置的参数</li>
+<li>后台实现: <ul>
+<li style="list-style: none"><input type="checkbox" checked> Step1:<br>  创建一个类(Common类), 设置对应的Static静态属性,对应各操作的个数,容量,速度,<br>  并设置默认值,以便在不输入参数时能保证系统正常运行</li>
+<li style="list-style: none"><input type="checkbox" checked> Step2:<br>  Common类写一个setParams方法, 用来将从数据库获取到的数据赋值<br>  给Common的静态属性,来实现参数的设置</li>
+</ul>
+</li>
+<li>前后交互的实现:<ul>
+<li style="list-style: none"><input type="checkbox" checked> 涉及技术: ajax异步通信<br>  将前台传入的参数值通过 ajax传入到后台, 后台获取到参数,存入数据库,<br>  然后后台使用的数据可以从数据库中获取</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-4-设定PUT、GET、Move操作的速度"><a href="#3-3-4-设定PUT、GET、Move操作的速度" class="headerlink" title="3.3.4 设定PUT、GET、Move操作的速度"></a>3.3.4 设定PUT、GET、Move操作的速度</h4><ul>
+<li>要求:  <ul>
+<li>可以设定PUT、GET、Move操作的速度</li>
+</ul>
+</li>
+<li>实现: <ul>
+<li>界面部分实现:<br>  创建对应个数的input的框来存放将要输入的各个线程对应的执行速度</li>
+<li>后台实现实现:<br>  用线程的sleep()延迟函数来延迟线程的执行,控制线程的执行速度,每个Put,Move<br>  ,Get线程内部都调用了sleep()函数,延迟时间为(0-100)的随机值乘以(50-速度值),<br>  速度值越大, 延迟时间越短,执行速度越快</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-5-实时显示Buffer中的内容"><a href="#3-3-5-实时显示Buffer中的内容" class="headerlink" title="3.3.5 实时显示Buffer中的内容"></a>3.3.5 实时显示Buffer中的内容</h4><ul>
+<li>要求: <ul>
+<li>实时显示Buffer中已放入的数据和数据个数,以及空闲的空间数</li>
+</ul>
+</li>
+<li><p>实现: </p>
+<ul>
+<li><p>前台部分的实现: </p>
+<p>  用table表格存放要显示的数据。数据通过设置定时器,每间隔<br>  一段时间就访问后台获取数据, 获取到数据后将数据放入对应<br>  table表格项</p>
+</li>
+<li><p>后台部分的实现: </p>
+<p>  将线程产生的数据存入数据库, 每次ajax访问后台的Servlet时从数据库查询数据, 返回给前台</p>
+</li>
+<li><p>获取Buffer已放入的数据和数据个数: </p>
+<p>  在Common中定义static类型的ArrayList,来作为课题中的Buffer    缓冲区, Buffer的size()属性<br>  即为放入的数据个数, 内容即为放入的字符</p>
+</li>
+<li><p>获取buffer的空闲空间数:</p>
+<p>  Common中设定static类型的BufferSize来代表每个Buffer的容量,     BufferSize和Buffer的<br>  size()值之差即为空闲空间数</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-6-实时显示线程阻塞个数"><a href="#3-3-6-实时显示线程阻塞个数" class="headerlink" title="3.3.6 实时显示线程阻塞个数"></a>3.3.6 实时显示线程阻塞个数</h4><ul>
+<li><p>要求: </p>
+<ul>
+<li>实时显示线程、进程所处于等待（阻塞）状态的个数</li>
+</ul>
+</li>
+<li><p>分析:<br>  引入线程概念后, 线程成了调度的独立单位, 而进程则是资源分配的独立单位,<br>  因此进程的阻塞即可用线程的阻塞个数代表</p>
+</li>
+<li><p>实现: </p>
+<ul>
+<li><p>前台实现:<br>  table表格显示,ajax获取数据。</p>
+</li>
+<li><p>后台实现:<br>  在Common中定义static类型的整型变量,用来表示被阻塞的线程数目,当执行到线程的<br>  wait()(线程的阻塞方法)时执行++操作,当执行到线程的notify()(线程的唤醒方法)<br>  时执行 – 操作</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-7-结果汇总显示"><a href="#3-3-7-结果汇总显示" class="headerlink" title="3.3.7 结果汇总显示"></a>3.3.7 结果汇总显示</h4><ul>
+<li>要求: <ul>
+<li>程序运行结束，显示汇总数据</li>
+</ul>
+</li>
+<li>实现:<ul>
+<li>总的运行时间:<br>  线程开始前调用System.currentTimeMillis()方法获取当前时间,当线程终止时    (点击结束按钮)时再调用System.currentTimeMillis()方法获取结束时间,两时间之差即为总运行时间</li>
+<li>Buffer中数据的个数:<br>  Common中各Buffer的size()值之和</li>
+<li>已放入BUFFER的数据个数:<br>  Common中创建static变量, 每次取出时变量值加1</li>
+<li>已取出的数据个数:<br>  Common中创建static变量, 每次取出时变量值加1</li>
+<li>平均每个buffer中的数据个数:<br>  Common中各Buffer的size()值之和比上Buffer的数量(3个)</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-1-8-保存实验输入和实验结果"><a href="#3-1-8-保存实验输入和实验结果" class="headerlink" title="3.1.8 保存实验输入和实验结果"></a>3.1.8 保存实验输入和实验结果</h4><ul>
+<li>要求: <ul>
+<li>能够将每次的实验输入和实验结果存储起来，下次运行时或以后可查询。</li>
+</ul>
+</li>
+<li>实现: <ul>
+<li>执行产生的数据都保存在数据库中, 可以通过转储数据库文件来保存,<br>  查询的话直接查询数据库表中的记录即可</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-emsp-结果演示"><a href="#4-emsp-结果演示" class="headerlink" title="4.&emsp;结果演示"></a><span style="color:red;text-shadow:5px 5px 5px #ccc ">4.&emsp;结果演示</span></h2><h3 id="4-1-项目主要界面展示"><a href="#4-1-项目主要界面展示" class="headerlink" title="4.1 项目主要界面展示"></a>4.1 项目主要界面展示</h3><blockquote>
+<p>主页</p>
+</blockquote>
+<p><img src="/images/project/OsProject/3.png" alt="" style=" "></p>
+<blockquote>
+<p>参数设置界面</p>
+</blockquote>
+<p><img src="/images/project/OsProject/4.png" alt="" style=" "></p>
+<h3 id="4-2-项目运行演示"><a href="#4-2-项目运行演示" class="headerlink" title="4.2 项目运行演示"></a>4.2 项目运行演示</h3><p>腾讯云对象存储COS视频地址:<br>    <a href="https://video-1254265973.cos.ap-beijing.myqcloud.com/MyOsProject.mp4" target="_blank" rel="noopener">https://video-1254265973.cos.ap-beijing.myqcloud.com/MyOsProject.mp4</a></p>
+<h2 id="5-emsp-项目配置"><a href="#5-emsp-项目配置" class="headerlink" title="5.&emsp;项目配置"></a><span style="color:#459df5;text-shadow:5px 5px 5px #ccc ">5.&emsp;项目配置</span></h2><blockquote>
+<p>5.1 数据库配置</p>
+</blockquote>
+<pre><code> (1)  数据库连接信息可在项目下的 src/jdbc.properties 文件中修改,
+      下图标红线的位置对应的是 自己数据库的名字(类型为Mysql数据库)。
+</code></pre><hr>
+<p> <img src="/images/project/arithmetic/jdbc.png" alt="" style=" ">    </p>
+<hr>
+<pre><code> (2) 将项目中的 osmessage.sql 导入自己电脑的本地数据库
+     演示Navicat导入的方式:
+     右键连接--&gt;选择运行SQL文件--&gt;选中osmessage.sql--&gt;运行完毕点击关闭--&gt;右键刷新。
+     完成以上步骤后, osmessage数据库便成功导入到了你的本地数据库中。
+</code></pre><hr>
+<p> <img src="/images/project/arithmetic/database.png" alt="" style=" ">    </p>
+<hr>
+<h2 id="6-emsp-项目源代码"><a href="#6-emsp-项目源代码" class="headerlink" title="6.&emsp;项目源代码"></a><span style="color:black;text-shadow:5px 5px 5px #ccc ">6.&emsp;项目源代码</span></h2><blockquote>
+<p>百度网盘下载 ( 包含项目报告 )</p>
+<ul>
+<li>百度网盘链接: 链接：<a href="https://pan.baidu.com/s/1vj8FrbuPTJnummNpnxcVwA" target="_blank" rel="noopener">https://pan.baidu.com/s/1vj8FrbuPTJnummNpnxcVwA</a> </li>
+<li>提取码：pk5z </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>github下载 ( 只含源代码 )</p>
+<ul>
+<li>github下载地址: <a href="https://github.com/fyf2016/MyOsProject.git" target="_blank" rel="noopener">https://github.com/fyf2016/MyOsProject.git</a></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>注: 两个地址都可以下载</p>
+</blockquote>
 
             </div>
             <hr>
@@ -662,7 +794,7 @@ MD5简介    1.定义        MD5即Message-Digest Algorithm 5（中文名为消�
                     <span class="reprint-tip">Reprint please specify: </span>
                     <a href="http://yoursite.com" class="b-link-green">流月如风</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/03/22/Node.js中的MD5加密/" class="b-link-green">Node.js中的MD5加密</a>
+                    <a href="/2018/07/29/操作系统课设/" class="b-link-green">操作系统课设(多道程序缓冲区协调操作)</a>
                 </p>
             </div>
         </div>
@@ -686,34 +818,27 @@ MD5简介    1.定义        MD5即Message-Digest Algorithm 5（中文名为消�
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">Previous</div>
             <div class="card">
-                <a href="/2018/03/31/JavaScript中的与数值相关的全局方法/">
+                <a href="/2018/07/29/组成原理课设/">
                     <div class="card-image">
                         
-                        <img src="/images/cover/cover5.jpg" class="responsive-img" alt="JavaScript中的与数值相关的全局方法。">
+                        <img src="/images/cover/cover4.jpg" class="responsive-img" alt="计算机组成原理课程设计">
                         
-                        <span class="card-title">JavaScript中的与数值相关的全局方法。</span>
+                        <span class="card-title">计算机组成原理课程设计</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">皮卡丘洗脑
-先来洗脑一下吧   
-        
-
-全局方法概括1.&emsp;parseInt ( )
-2.&emsp;parseFloat ( )
-3.&emsp;isNaN ( )
-4.&emsp;isFinate ( )
-具体内容</div>
+                    <div class="summary">1. 课程设计简介综合运用所学的计算机组成原理知识，掌握计算机各条指令运行的过程，设计并实现较为完整的计算机运算过程。设计并实现任意两个八位二进制数的原码一位乘法，实现带有符号位的运算。
+2. 实验设备TDN—CM+ 计算机组成原理实验教学</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-03-31
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-29
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/技术/" class="post-category" target="_blank">
-                                    技术
+                            <a href="/categories/课程设计/" class="post-category" target="_blank">
+                                    课程设计
                                 </a>
                             
                             
@@ -723,12 +848,12 @@ MD5简介    1.定义        MD5即Message-Digest Algorithm 5（中文名为消�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/技术/" target="_blank">
-                        <span class="chip bg-color">技术</span>
+                    <a href="/tags/课程设计/" target="_blank">
+                        <span class="chip bg-color">课程设计</span>
                     </a>
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/汇编指令/" target="_blank">
+                        <span class="chip bg-color">汇编指令</span>
                     </a>
                     
                 </div>
@@ -740,32 +865,53 @@ MD5简介    1.定义        MD5即Message-Digest Algorithm 5（中文名为消�
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2017/03/27/hello-world/">
+                <a href="/2018/07/22/算法三级项目/">
                     <div class="card-image">
                         
+                        <img src="/images/cover/cover1.jpg" class="responsive-img" alt="算法三级项目(管道铺设系统)">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">算法三级项目(管道铺设系统)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary">项目开发大致流程1.&emsp;摘要
+2.&emsp;项目要求
+3.&emsp;总体设计
+4.&emsp;结果演示
+5.&emsp;项目配置
+6.&emsp;项目源代码
+1.&emsp;摘要    本次课程的三级项目是要求设计实现一个管线铺</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-03-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/helloWorld/" class="post-category" target="_blank">
-                                    helloWorld
+                            <a href="/categories/三级项目/" class="post-category" target="_blank">
+                                    三级项目
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/三级项目/" target="_blank">
+                        <span class="chip bg-color">三级项目</span>
+                    </a>
+                    
+                    <a href="/tags/javaWeb/" target="_blank">
+                        <span class="chip bg-color">javaWeb</span>
+                    </a>
+                    
+                    <a href="/tags/算法/" target="_blank">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
                 </div>
                 
             </div>

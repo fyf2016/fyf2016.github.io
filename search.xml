@@ -22,6 +22,10 @@
             
             <tag> 三级项目 </tag>
             
+            <tag> javaWeb </tag>
+            
+            <tag> 数据库 </tag>
+            
         </tags>
       
     </entry>
@@ -56,6 +60,35 @@
     
     
     <entry>
+      <title>操作系统课设(多道程序缓冲区协调操作)</title>
+      <link href="/2018/07/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E8%AE%BE/"/>
+      <url>/2018/07/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E8%AE%BE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="项目开发大致流程-多道程序缓冲区协调操作"><a href="#项目开发大致流程-多道程序缓冲区协调操作" class="headerlink" title="项目开发大致流程 ( 多道程序缓冲区协调操作 )"></a><span style="color:rgba(255,165,0,0.8);text-shadow:5px 5px 5px #ccc">项目开发大致流程 ( 多道程序缓冲区协调操作 )</span></h2><p><span style="color:purple;text-shadow:5px 5px 5px #ccc ">1.&emsp;项目概述</span></p><p><span style="color:orange;text-shadow:5px 5px 5px #ccc ">2.&emsp;项目要求</span></p><p><span style="color:green;text-shadow:5px 5px 5px #ccc ">3.&emsp;总体设计</span></p><p><span style="color:red;text-shadow:5px 5px 5px #ccc ">4.&emsp;结果演示</span></p><p><span style="color:#459df5;text-shadow:5px 5px 5px #ccc ">5.&emsp;项目配置</span></p><p><span style="color:black;text-shadow:5px 5px 5px #ccc ">6.&emsp;项目源代码</span></p><h2 id="1-emsp-项目概述"><a href="#1-emsp-项目概述" class="headerlink" title="1.&emsp;项目概述"></a><span style="color:purple;text-shadow:5px 5px 5px #ccc ">1.&emsp;项目概述</span></h2><blockquote><p>文字描述</p></blockquote><ul><li><p>有多个 PUT 操作要不断循环地向 Buffer1 送字符数据，有 Move1 操作不断地将 Buffer1 的数据取到 Buffer2 。</p></li><li><p>Move2 操作不断地将Buffer1的数据取到 Buffer3 ，有多个 GET 操作要不断地从 Buffer2 和 Buffer3 中取数据。</p></li><li>PUT、 MOVE、 GET每次操作一个数据，为了在操作的过程中要保证数据不丢失, 每个 Buffer 每次只能接受一个 PUT 或一个 Move 或一个 Get 。</li><li>运用进程同步和互斥机制设计一个多道程序完成上述操作。</li></ul><blockquote><p>操作图示</p></blockquote><p><img src="/images/project/OsProject/1.png" alt="" style=" "></p><h2 id="2-emsp-项目要求"><a href="#2-emsp-项目要求" class="headerlink" title="2.&emsp;项目要求"></a><span style="color:orange;text-shadow:5px 5px 5px #ccc ">2.&emsp;项目要求</span></h2><ol><li>可以随机产生字符数据，由put操作将数据放入Buff，buffer中容量单位是字符；</li><li>提供良好图形界面，显示Buffer的操作过程，可以暂停和继续系统的执行；</li><li>可以设定各Buffer的容量、PUT、GET、Move操作的个数；</li><li>可以设定PUT、GET、Move操作的速度；</li><li>实时显示每个Buffer中已放入的数据和数据个数，当前Buffer中数据的个数和数据的内容，空闲Buffer的空间的个数；</li><li>实时显示线程、进程所处于等待（阻塞）状态的个数；</li><li>程序运行结束，显示汇总数据：</li><li>总的运行时间；Buffer中数据的个数；已放入BUFFER的数据个数；</li><li>已取出的数据个数；平均每个buffer中的数据个数。</li><li>能够将每次的实验输入和实验结果存储起来，下次运行时或以后可查询。 </li><li>可以根据题目的基本要求进行丰富的创意和想象。</li></ol><h2 id="3-emsp-总体设计"><a href="#3-emsp-总体设计" class="headerlink" title="3.&emsp;总体设计"></a><span style="color:green;text-shadow:5px 5px 5px #ccc ">3.&emsp;总体设计</span></h2><h3 id="3-1-课题分析"><a href="#3-1-课题分析" class="headerlink" title="3.1 课题分析"></a>3.1 课题分析</h3><blockquote><p>课题实质探究</p></blockquote><ul><li>由项目的描述可知该课题为 “多生产者 – 多消费者” 问题, 因此可以分析出其同步和互斥关系。    <ul><li>同步关系:<br>多个生产者和多个消费者之间要按一定顺序访问缓冲区, 共同协作来保障进程顺利执行。</li><li>互斥关系:<br>对缓冲区(临界资源)的访问是互斥的,缓冲区域每次只能接受一个PUT或一个Move或一个Get(互斥访问)。</li></ul></li></ul><h3 id="3-2-解读课题"><a href="#3-2-解读课题" class="headerlink" title="3.2 解读课题"></a>3.2 解读课题</h3><blockquote><p>以书本所学信号量方式为例 , 来实现同步和互斥</p></blockquote><h4 id="3-2-1-信号量的设计"><a href="#3-2-1-信号量的设计" class="headerlink" title="3.2.1 信号量的设计"></a>3.2.1 信号量的设计</h4><ul><li>信号量<ul><li>empty1: 缓冲区Buffer1的空位数</li><li>empty2: 缓冲区Buffer2的空位数</li><li>empty3: 缓冲区Buffer3的空位数</li><li>full1: 缓冲区1内的数据个数</li><li>full2: 缓冲区2内的数据个数</li><li>full2: 缓冲区3内的数据个数</li></ul></li></ul><h4 id="3-2-2-以信号量来实现同步和互斥"><a href="#3-2-2-以信号量来实现同步和互斥" class="headerlink" title="3.2.2 以信号量来实现同步和互斥"></a>3.2.2 以信号量来实现同步和互斥</h4><p><img src="/images/project/OsProject/2.png" alt="" style=" "></p><hr><h3 id="3-3-主要功能设计"><a href="#3-3-主要功能设计" class="headerlink" title="3.3 主要功能设计"></a>3.3 主要功能设计</h3><h4 id="3-3-1-产生随机字符数据"><a href="#3-3-1-产生随机字符数据" class="headerlink" title="3.3.1  产生随机字符数据"></a>3.3.1  产生随机字符数据</h4><ul><li>要求:  <ul><li>产生的数据是字符类型,且是随机产生的</li></ul></li><li>实现:  <ul><li style="list-style: none"><input type="checkbox" checked> Step1:<br>  定义一个String字符串,包含1-9所有数字和a-z的小写字符以及A-Z的大写字符</li><li style="list-style: none"><input type="checkbox" checked> Step2:<br>  创建Random类,产生一个从0到上述String字符串长度-1的随机整型量,<br>  调用String类的charAt(int i)方法获取字符</li><li style="list-style: none"><input type="checkbox" checked> Step3:<br>  封装成静态类的方法(RandomChar),返回值为获取的字符, 方便调用</li></ul></li></ul><h4 id="3-3-2-实时显示操作内容-暂停和继续"><a href="#3-3-2-实时显示操作内容-暂停和继续" class="headerlink" title="3.3.2 实时显示操作内容,暂停和继续"></a>3.3.2 实时显示操作内容,暂停和继续</h4><ul><li>要求: <ul><li>图形界面，显示Buffer的操作过程，可以暂停和继续系统的执行</li></ul></li><li>实现: <ul><li>界面部分: html+css+js+jquery+ajax (后面会详细介绍)</li><li>显示Buffer操作过程: <ul><li style="list-style: none"><input type="checkbox" checked> Step1:<br>  页面部分创建三个文本域, 分别对应Buffer1,Buffer2,Buffer3的操作内容</li><li style="list-style: none"><input type="checkbox" checked> Step2:<br>  每次对Buffer操作的内容(放入或拿出字符)存放到数据库表中</li><li style="list-style: none"><input type="checkbox" checked> Step3:<br>  页面使用ajax,访问后台,后台查询数据库,将查到的数据转<br>   为json格式返回给前台, 前台将获取的数据送入对应的文本域</li><li style="list-style: none"><input type="checkbox" checked> 暂停的实现:<br>  分别在put线程,move线程,get线程的run方法末尾中加入While(boolean pause)循环,pause为true则一直睡眠,pause为false 则跳出循环, 用暂停对应的按钮来控制pause</li><li style="list-style: none"><input type="checkbox" checked> 继续的实现: 将pause的值改为false, 则可以跳出循环</li></ul></li></ul></li></ul><h4 id="3-3-3-设定操作个数-容量-速度"><a href="#3-3-3-设定操作个数-容量-速度" class="headerlink" title="3.3.3 设定操作个数 容量 速度"></a>3.3.3 设定操作个数 容量 速度</h4><ul><li>要求: <ul><li>可以设定各Buffer的容量、PUT、GET、Move操作的个数</li></ul></li><li>实现: <ul><li>界面部分相关实现: 创建多个input输入框用来存放要设置的参数</li><li>后台实现: <ul><li style="list-style: none"><input type="checkbox" checked> Step1:<br>  创建一个类(Common类), 设置对应的Static静态属性,对应各操作的个数,容量,速度,<br>  并设置默认值,以便在不输入参数时能保证系统正常运行</li><li style="list-style: none"><input type="checkbox" checked> Step2:<br>  Common类写一个setParams方法, 用来将从数据库获取到的数据赋值<br>  给Common的静态属性,来实现参数的设置</li></ul></li><li>前后交互的实现:<ul><li style="list-style: none"><input type="checkbox" checked> 涉及技术: ajax异步通信<br>  将前台传入的参数值通过 ajax传入到后台, 后台获取到参数,存入数据库,<br>  然后后台使用的数据可以从数据库中获取</li></ul></li></ul></li></ul><h4 id="3-3-4-设定PUT、GET、Move操作的速度"><a href="#3-3-4-设定PUT、GET、Move操作的速度" class="headerlink" title="3.3.4 设定PUT、GET、Move操作的速度"></a>3.3.4 设定PUT、GET、Move操作的速度</h4><ul><li>要求:  <ul><li>可以设定PUT、GET、Move操作的速度</li></ul></li><li>实现: <ul><li>界面部分实现:<br>  创建对应个数的input的框来存放将要输入的各个线程对应的执行速度</li><li>后台实现实现:<br>  用线程的sleep()延迟函数来延迟线程的执行,控制线程的执行速度,每个Put,Move<br>  ,Get线程内部都调用了sleep()函数,延迟时间为(0-100)的随机值乘以(50-速度值),<br>  速度值越大, 延迟时间越短,执行速度越快</li></ul></li></ul><h4 id="3-3-5-实时显示Buffer中的内容"><a href="#3-3-5-实时显示Buffer中的内容" class="headerlink" title="3.3.5 实时显示Buffer中的内容"></a>3.3.5 实时显示Buffer中的内容</h4><ul><li>要求: <ul><li>实时显示Buffer中已放入的数据和数据个数,以及空闲的空间数</li></ul></li><li><p>实现: </p><ul><li><p>前台部分的实现: </p><p>  用table表格存放要显示的数据。数据通过设置定时器,每间隔<br>  一段时间就访问后台获取数据, 获取到数据后将数据放入对应<br>  table表格项</p></li><li><p>后台部分的实现: </p><p>  将线程产生的数据存入数据库, 每次ajax访问后台的Servlet时从数据库查询数据, 返回给前台</p></li><li><p>获取Buffer已放入的数据和数据个数: </p><p>  在Common中定义static类型的ArrayList,来作为课题中的Buffer    缓冲区, Buffer的size()属性<br>  即为放入的数据个数, 内容即为放入的字符</p></li><li><p>获取buffer的空闲空间数:</p><p>  Common中设定static类型的BufferSize来代表每个Buffer的容量,     BufferSize和Buffer的<br>  size()值之差即为空闲空间数</p></li></ul></li></ul><h4 id="3-3-6-实时显示线程阻塞个数"><a href="#3-3-6-实时显示线程阻塞个数" class="headerlink" title="3.3.6 实时显示线程阻塞个数"></a>3.3.6 实时显示线程阻塞个数</h4><ul><li><p>要求: </p><ul><li>实时显示线程、进程所处于等待（阻塞）状态的个数</li></ul></li><li><p>分析:<br>  引入线程概念后, 线程成了调度的独立单位, 而进程则是资源分配的独立单位,<br>  因此进程的阻塞即可用线程的阻塞个数代表</p></li><li><p>实现: </p><ul><li><p>前台实现:<br>  table表格显示,ajax获取数据。</p></li><li><p>后台实现:<br>  在Common中定义static类型的整型变量,用来表示被阻塞的线程数目,当执行到线程的<br>  wait()(线程的阻塞方法)时执行++操作,当执行到线程的notify()(线程的唤醒方法)<br>  时执行 – 操作</p></li></ul></li></ul><h4 id="3-3-7-结果汇总显示"><a href="#3-3-7-结果汇总显示" class="headerlink" title="3.3.7 结果汇总显示"></a>3.3.7 结果汇总显示</h4><ul><li>要求: <ul><li>程序运行结束，显示汇总数据</li></ul></li><li>实现:<ul><li>总的运行时间:<br>  线程开始前调用System.currentTimeMillis()方法获取当前时间,当线程终止时    (点击结束按钮)时再调用System.currentTimeMillis()方法获取结束时间,两时间之差即为总运行时间</li><li>Buffer中数据的个数:<br>  Common中各Buffer的size()值之和</li><li>已放入BUFFER的数据个数:<br>  Common中创建static变量, 每次取出时变量值加1</li><li>已取出的数据个数:<br>  Common中创建static变量, 每次取出时变量值加1</li><li>平均每个buffer中的数据个数:<br>  Common中各Buffer的size()值之和比上Buffer的数量(3个)</li></ul></li></ul><h4 id="3-1-8-保存实验输入和实验结果"><a href="#3-1-8-保存实验输入和实验结果" class="headerlink" title="3.1.8 保存实验输入和实验结果"></a>3.1.8 保存实验输入和实验结果</h4><ul><li>要求: <ul><li>能够将每次的实验输入和实验结果存储起来，下次运行时或以后可查询。</li></ul></li><li>实现: <ul><li>执行产生的数据都保存在数据库中, 可以通过转储数据库文件来保存,<br>  查询的话直接查询数据库表中的记录即可</li></ul></li></ul><h2 id="4-emsp-结果演示"><a href="#4-emsp-结果演示" class="headerlink" title="4.&emsp;结果演示"></a><span style="color:red;text-shadow:5px 5px 5px #ccc ">4.&emsp;结果演示</span></h2><h3 id="4-1-项目主要界面展示"><a href="#4-1-项目主要界面展示" class="headerlink" title="4.1 项目主要界面展示"></a>4.1 项目主要界面展示</h3><blockquote><p>主页</p></blockquote><p><img src="/images/project/OsProject/3.png" alt="" style=" "></p><blockquote><p>参数设置界面</p></blockquote><p><img src="/images/project/OsProject/4.png" alt="" style=" "></p><h3 id="4-2-项目运行演示"><a href="#4-2-项目运行演示" class="headerlink" title="4.2 项目运行演示"></a>4.2 项目运行演示</h3><p>腾讯云对象存储COS视频地址:<br>    <a href="https://video-1254265973.cos.ap-beijing.myqcloud.com/MyOsProject.mp4" target="_blank" rel="noopener">https://video-1254265973.cos.ap-beijing.myqcloud.com/MyOsProject.mp4</a></p><h2 id="5-emsp-项目配置"><a href="#5-emsp-项目配置" class="headerlink" title="5.&emsp;项目配置"></a><span style="color:#459df5;text-shadow:5px 5px 5px #ccc ">5.&emsp;项目配置</span></h2><blockquote><p>5.1 数据库配置</p></blockquote><pre><code> (1)  数据库连接信息可在项目下的 src/jdbc.properties 文件中修改,      下图标红线的位置对应的是 自己数据库的名字(类型为Mysql数据库)。</code></pre><hr><p> <img src="/images/project/arithmetic/jdbc.png" alt="" style=" ">    </p><hr><pre><code> (2) 将项目中的 osmessage.sql 导入自己电脑的本地数据库     演示Navicat导入的方式:     右键连接--&gt;选择运行SQL文件--&gt;选中osmessage.sql--&gt;运行完毕点击关闭--&gt;右键刷新。     完成以上步骤后, osmessage数据库便成功导入到了你的本地数据库中。</code></pre><hr><p> <img src="/images/project/arithmetic/database.png" alt="" style=" ">    </p><hr><h2 id="6-emsp-项目源代码"><a href="#6-emsp-项目源代码" class="headerlink" title="6.&emsp;项目源代码"></a><span style="color:black;text-shadow:5px 5px 5px #ccc ">6.&emsp;项目源代码</span></h2><blockquote><p>百度网盘下载 ( 包含项目报告 )</p><ul><li>百度网盘链接: 链接：<a href="https://pan.baidu.com/s/1vj8FrbuPTJnummNpnxcVwA" target="_blank" rel="noopener">https://pan.baidu.com/s/1vj8FrbuPTJnummNpnxcVwA</a> </li><li>提取码：pk5z </li></ul></blockquote><blockquote><p>github下载 ( 只含源代码 )</p><ul><li>github下载地址: <a href="https://github.com/fyf2016/MyOsProject.git" target="_blank" rel="noopener">https://github.com/fyf2016/MyOsProject.git</a></li></ul></blockquote><blockquote><p>注: 两个地址都可以下载</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课程设计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 课程设计 </tag>
+            
+            <tag> javaWeb </tag>
+            
+            <tag> 操作系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法三级项目(管道铺设系统)</title>
       <link href="/2018/07/22/%E7%AE%97%E6%B3%95%E4%B8%89%E7%BA%A7%E9%A1%B9%E7%9B%AE/"/>
       <url>/2018/07/22/%E7%AE%97%E6%B3%95%E4%B8%89%E7%BA%A7%E9%A1%B9%E7%9B%AE/</url>
@@ -75,6 +108,8 @@
             <tag> 三级项目 </tag>
             
             <tag> javaWeb </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -146,7 +181,7 @@
       
       <categories>
           
-          <category> hhh </category>
+          <category> helloWorld </category>
           
       </categories>
       
