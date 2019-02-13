@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2019/02/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E8%AF%BE%E8%AE%BE/"/>
+      <url>/2019/02/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E8%AF%BE%E8%AE%BE/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据库三级项目(电影院管理系统)</title>
       <link href="/2018/08/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%89%E7%BA%A7%E9%A1%B9%E7%9B%AE/"/>
       <url>/2018/08/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%89%E7%BA%A7%E9%A1%B9%E7%9B%AE/</url>
@@ -212,6 +225,33 @@
             <tag> js </tag>
             
             <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>性格职业测试app</title>
+      <link href="/2017/03/12/%E6%80%A7%E6%A0%BC%E8%81%8C%E4%B8%9A%E6%B5%8B%E8%AF%95App/"/>
+      <url>/2017/03/12/%E6%80%A7%E6%A0%BC%E8%81%8C%E4%B8%9A%E6%B5%8B%E8%AF%95App/</url>
+      
+        <content type="html"><![CDATA[<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a><span style="color:rgba(255,165,0,0.8);text-shadow:5px 5px 5px #ccc">项目介绍</span></h2><p><span style="color:purple;text-shadow:5px 5px 5px #ccc ">1.&emsp;项目背景</span></p><p><span style="color:orange;text-shadow:5px 5px 5px #ccc ">2.&emsp;项目意义</span></p><p><span style="color:green;text-shadow:5px 5px 5px #ccc ">3.&emsp;总体设计</span></p><p><span style="color:black;text-shadow:5px 5px 5px #ccc ">4.&emsp;项目源代码</span></p><h2 id="1-emsp-项目背景"><a href="#1-emsp-项目背景" class="headerlink" title="1.&emsp;项目背景"></a><span style="color:purple;text-shadow:5px 5px 5px #ccc ">1.&emsp;项目背景</span></h2><pre><code>在当今这个信息大爆炸的时代 , 各个行业都迅猛发展 ,传达给人们的信息量越来越大, 形形色色的行业的出现和发展往往会给人们在选择职业时带来困扰,而对自身的不了解更让人头痛,因此在这个大的背景下,了解自身性格并选择合适的职业尤为重要。</code></pre><h2 id="2-emsp-项目意义"><a href="#2-emsp-项目意义" class="headerlink" title="2.&emsp;项目意义"></a><span style="color:orange;text-shadow:5px 5px 5px #ccc ">2.&emsp;项目意义</span></h2><blockquote><p>找寻自身的兴趣和能力</p></blockquote><ul><li>我们知道找到自己的兴趣和能力是选择职业或教育前的重要一步，‘磨刀不误砍柴功’，<br>  我们最不希望几十年的人生光阴因为选择错误而事倍功半。</li></ul><blockquote><p>我们常常对自己的了解不够深入</p></blockquote><ul><li>而我们自己对自己的了解往往不知道如何入手，这样，我们往往会借助于权威专业的职业性格测试来了解自己。<br> 了解自己的人格类型，适合领域和适合职业。</li></ul><blockquote><p>通过app上的测试题了解自己</p></blockquote><ul><li>无论你现在从事什么职业，你都可以通过这个性格职业测试app，看看自己到底喜欢做什么，适合做什么…</li></ul><h2 id="3-emsp-总体设计"><a href="#3-emsp-总体设计" class="headerlink" title="3.&emsp;总体设计"></a><span style="color:green;text-shadow:5px 5px 5px #ccc ">3.&emsp;总体设计</span></h2><blockquote><p>项目划分</p></blockquote><ul><li>项目类型<ul><li>WebApp项目</li></ul></li><li><p>项目主要划分</p><ul><li>页面</li><li>霍兰德算法(核心)</li></ul></li><li><p>项目主要开发工具</p><ul><li>Sublime</li><li>Hbulider</li></ul></li><li><p>项目开发步骤</p><ul><li>第一步: 实现霍兰德算法</li><li>第二步: 添加界面</li><li>第三步: 使用Hbuilder, 打包成WebApp</li></ul></li></ul><h2 id="4-emsp-结果演示"><a href="#4-emsp-结果演示" class="headerlink" title="4.&emsp;结果演示"></a><span style="color:red;text-shadow:5px 5px 5px #ccc ">4.&emsp;结果演示</span></h2><h3 id="4-1-项目主要界面展示"><a href="#4-1-项目主要界面展示" class="headerlink" title="4.1 项目主要界面展示"></a>4.1 项目主要界面展示</h3><blockquote><p>logo(启动图标)</p></blockquote><hr><p><img src="/images/project/PersonalTestApp/1.png" alt="" style=" "></p><hr><blockquote><p>启动画面</p></blockquote><hr><p><img src="/images/project/PersonalTestApp/2.png" alt="" style=" " width="230"></p><hr><blockquote><p>主界面</p></blockquote><hr><p><img src="/images/project/PersonalTestApp/3.png" alt="" style=" " width="230"></p><hr><blockquote><p>测试题开始界面</p></blockquote><hr><p><img src="/images/project/PersonalTestApp/4.png" alt="" style=" " width="230"></p><hr><blockquote><p>部分测试内容</p></blockquote><hr><p><img src="/images/project/PersonalTestApp/5.png" alt="" style=" " width="230"></p><hr><blockquote><p>测试结果界面</p></blockquote><hr><p><img src="/images/project/PersonalTestApp/6.png" alt="" style=" " width="230"></p><hr><blockquote><p>性格分析界面</p></blockquote><hr><p><img src="/images/project/PersonalTestApp/7.png" alt="" style=" " width="230"></p><hr><blockquote><p>性格分析部分内容</p></blockquote><hr><p><img src="/images/project/PersonalTestApp/8.png" alt="" style=" " width="230"></p><hr><blockquote><p>算法介绍界面</p></blockquote><hr><p><img src="/images/project/PersonalTestApp/9.png" alt="" style=" " width="230"></p><hr><blockquote><p>团队介绍界面</p></blockquote><hr><p><img src="/images/project/PersonalTestApp/10.png" alt="" style=" " width="230"></p><hr><h2 id="4-emsp-项目源代码"><a href="#4-emsp-项目源代码" class="headerlink" title="4.&emsp;项目源代码"></a><span style="color:black;text-shadow:5px 5px 5px #ccc ">4.&emsp;项目源代码</span></h2><blockquote><p>百度网盘下载 ( 包含项目报告 )</p><ul><li>百度网盘链接: 链接：<a href="https://pan.baidu.com/s/1bHNPOIbXBDKdVaTZ0iM4Yg" target="_blank" rel="noopener">https://pan.baidu.com/s/1bHNPOIbXBDKdVaTZ0iM4Yg</a></li><li>提取码：u6vn </li></ul></blockquote><blockquote><p>github下载 ( 只含源代码 )</p><ul><li>github下载地址: <a href="https://github.com/fyf2016/PersonalityProfessionalTestApp.git" target="_blank" rel="noopener">https://github.com/fyf2016/PersonalityProfessionalTestApp.git</a></li></ul></blockquote><blockquote><p>注: 两个地址都可以下载</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> app </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> webapp </tag>
+            
+            <tag> holland-test </tag>
             
         </tags>
       
